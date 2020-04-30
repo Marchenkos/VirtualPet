@@ -10,7 +10,7 @@ import {
 import {Chip} from 'react-native-paper';
 import CustomInput from '../components/Input';
 import AsyncStorage from '@react-native-community/async-storage';
-import {CONSTANTS} from '../../constants';
+import {CONSTANTS} from '../constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Registration({navigation}) {
+export default function RegistrationScreen({navigation}) {
   const [genderValue, setGenderValue] = useState(null);
   const [loginValue, setLoginValue] = useState('');
   const [emailValue, setEmailValue] = useState('');

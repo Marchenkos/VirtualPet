@@ -1,4 +1,4 @@
-import Login from '../screens/LogIn';
+import LogInScreen from '../screens/LogInScreen';
 import {saveCurrentUserAction} from '../actions/currentUser.action';
 
 import {connect} from 'react-redux';
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(Login);
+)(LogInScreen);

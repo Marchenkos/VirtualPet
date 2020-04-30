@@ -3,14 +3,14 @@ import React, {useCallback, useEffect} from 'react';
 import {View} from 'react-native';
 import Orientation from 'react-native-orientation';
 import {CONSTANTS} from '../../constants';
-import HeaderState from '../components/HeaderState';
+import HeaderState from '../components/StatusBar';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Provider as PaperProvider} from 'react-native-paper';
-import Home from './Home';
-import Registration from './Registration';
+import Home from './HomeScreen';
+import Registration from './RegistrationScreen';
 import LoginContainer from '../containers/LoginContainer';
-import ShopPage from './ShopPage';
+import ShopScreen from './ShopScreen';
 
 const Stack = createStackNavigator();
 
@@ -39,7 +39,7 @@ export default function MainPage({
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ShopPage"
+        initialRouteName="ShopScreen"
         screenOptions={{
           headerShown: false,
         }}>

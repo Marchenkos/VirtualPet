@@ -3,8 +3,7 @@ import {StyleSheet, Image, Dimensions, View} from 'react-native';
 import Orientation from 'react-native-orientation';
 import Shop from '../components/Shop';
 // import {SafeAreaView} from 'react-native-safe-area-context';
-import {CONSTANTS} from '../../constants';
-import HeaderState from '../components/HeaderState';
+import StatusBarContainer from '../containers/StatusBarContainer';
 
 const styles = StyleSheet.create({
   imageBackground: {
@@ -17,30 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function ShopPage({
-  currentUser,
-  sleepLevel,
-  foodLevel,
-  wcLevel,
-  enjoyLevel,
-  changeFoodLevel,
-  changeSleepLevel,
-  changeWCLevel,
-  changeEnjoyLevel,
-}) {
+export default function ShopScreen() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     Orientation.lockToLandscapeLeft();
     console.log('a;a');
   });
-
-  const changeDesires = useCallback(() => {
-    changeFoodLevel(10, CONSTANTS.ACTION_OPERATIONS.decrease);
-    changeEnjoyLevel(5, CONSTANTS.ACTION_OPERATIONS.decrease);
-    changeSleepLevel(5, CONSTANTS.ACTION_OPERATIONS.decrease);
-    changeWCLevel(10, CONSTANTS.ACTION_OPERATIONS.decrease);
-  }, [changeEnjoyLevel, changeFoodLevel, changeSleepLevel, changeWCLevel]);
 
   useEffect(() => {
     if (products.length < 1) {
@@ -53,17 +35,11 @@ export default function ShopPage({
           console.error(error);
         });
     }
-  });
+  }, [products]);
 
   return (
     <View>
-      <HeaderState
-        sleepLevel={sleepLevel}
-        foodLevel={foodLevel}
-        wcLevel={wcLevel}
-        enjoyLevel={enjoyLevel}
-        changeDesires={changeDesires}
-      />
+     <StatusBarContainer />
       <Image
         source={require('../../img/shopbg.png')}
         style={styles.imageBackground}
