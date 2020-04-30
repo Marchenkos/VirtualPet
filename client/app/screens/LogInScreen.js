@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function Login({navigation, getUserCurrent}) {
+export default function LogInScreen({navigation, getUserCurrent}) {
   const [loginValue, setLoginValue] = useState('');
   const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');

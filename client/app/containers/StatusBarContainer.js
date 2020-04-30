@@ -1,16 +1,15 @@
-import ShopPage from '../screens/ShopScreen';
-import {removeCurrentUserAction} from '../actions/currentUser.action';
+import {connect} from 'react-redux';
+
+import StatusBar from '../components/StatusBar';
 import {
   changeEnjoyLevel,
   changeFoodLevel,
   changeSleepLevel,
   changeWCLevel,
 } from '../actions/changeDesireLevels';
-import {connect} from 'react-redux';
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.user.currentUser,
     foodLevel: state.petsDesires.foodLevel,
     sleepLevel: state.petsDesires.sleepLevel,
     wcLevel: state.petsDesires.wcLevel,
@@ -20,7 +19,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    logOut: () => dispatch(removeCurrentUserAction()),
     changeFoodLevel: (value, actionOperation) =>
       dispatch(changeFoodLevel(value, actionOperation)),
     changeSleepLevel: (value, actionOperation) =>
@@ -35,4 +33,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ShopPage);
+)(StatusBar);

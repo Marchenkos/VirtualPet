@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 
-import {CONSTANTS} from '../../../constants';
+import {CONSTANTS} from '../../constants';
 
 const styles = StyleSheet.create({
   container: {

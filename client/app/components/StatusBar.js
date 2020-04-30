@@ -1,10 +1,10 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import {CONSTANTS} from '../../constants';
+import {CONSTANTS} from '../constants';
 
-import ProgressCircle from '../components/ProgressCircle/ProgressCircle';
-import useInterval from '../components/useInterval';
+import ProgressCircle from './ProgressCircle/ProgressCircle';
+import useInterval from './useInterval';
 
 const styles = StyleSheet.create({
   overlay: {
@@ -25,15 +25,21 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function HeaderState({
+export default function StatusBar({
   sleepLevel,
   foodLevel,
   wcLevel,
   enjoyLevel,
-  changeDesires,
+  changeFoodLevel,
+  changeSleepLevel,
+  changeWCLevel,
+  changeEnjoyLevel,
 }) {
   useInterval(() => {
-    changeDesires();
+    changeFoodLevel(10, CONSTANTS.ACTION_OPERATIONS.decrease);
+    changeEnjoyLevel(5, CONSTANTS.ACTION_OPERATIONS.decrease);
+    changeSleepLevel(5, CONSTANTS.ACTION_OPERATIONS.decrease);
+    changeWCLevel(10, CONSTANTS.ACTION_OPERATIONS.decrease);
   }, 20000);
 
   return (

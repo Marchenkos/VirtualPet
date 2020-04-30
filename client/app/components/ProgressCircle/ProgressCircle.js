@@ -3,7 +3,7 @@
 import React, {useState, useEffect} from 'react';
 import {View, StyleSheet, Animated, Text} from 'react-native';
 import HalfCircle from './HalfCircle';
-import {CONSTANTS} from '../../../constants';
+import {CONSTANTS} from '../../constants';
 
 const styles = StyleSheet.create({
   contsinerCircle: {
