@@ -1,0 +1,20 @@
+<View>
+        <Button
+          title="eat"
+          style={styles.customButton}
+          onPress={increaseFoodLevel}
+        />
+        <Button
+          title="sleep"
+          style={styles.customButton}
+          onPress={increaseSleepLevel}
+        />
+      </View>
+
+        const increaseFoodLevel = () => {
+    changeFoodLevel(20, CONSTANTS.ACTION_OPERATIONS.increase);
+  };
+
+  const increaseSleepLevel = () => {
+    changeSleepLevel(30, CONSTANTS.ACTION_OPERATIONS.increase);
+  };
